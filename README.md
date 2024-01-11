@@ -1,3 +1,12 @@
+# Curl command to check weather api:
+
+```sh
+curl --location \
+  --request GET \
+  'https://api.openweathermap.org/data/2.5/forecast?lat=55&lon=-3&appid=a77c5d7e53c290fe674ac06a33d17464' \
+  --header 'Content-Type: application/json'
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
