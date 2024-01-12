@@ -31,13 +31,14 @@ const Weather = () => {
       .get(
         `${apiKeys.base}weather?q=${searchInput}&units=metric&APPID=${apiKeys.key}`
       )
-      .then((response) => {
+      ?.then((response) => {
         // console.log("🚀 ~ .then ~ response.data:", JSON.stringify(response.data))
         setWeather(response.data);
         // Clear search input
         setSearchInput("");
+        setError(null);
       })
-      .catch((error) => {
+      ?.catch((error) => {
         // console.log(JSON.stringify(error));
         // Set error
         setError(error);
@@ -51,9 +52,9 @@ const Weather = () => {
     <React.Fragment>
       <div className="city" role="region" aria-label="Weather Information">
         <div className="leftContainer">
-          <div className="leftTitle">
+          <div className="leftTitle" data-testid="city-info">
             <h2>
-              {weather?.name} {weather?.sys?.country}
+              {`${weather?.name} ${weather?.sys?.country}`}
             </h2>
           </div>
           <div className="leftIcon">
@@ -61,7 +62,8 @@ const Weather = () => {
               {...CONFIG.ICON.BIG}
               icon={textToIcon(weather?.weather?.[0]?.main)}
             />
-            <p>{weather?.weather?.[0]?.main}</p>
+            <p>{i18next.t(`${weather?.weather?.[0]?.id}.main`)}</p>
+            <p>{i18next.t(`${weather?.weather?.[0]?.id}.description`)}</p>
           </div>
         </div>
 
@@ -95,7 +97,7 @@ const Weather = () => {
           />
         </div>
         <article className="today-weather">
-          <h3>{weather?.weather?.[0]?.main}</h3>
+          <h3>{i18next.t(`${weather?.weather?.[0]?.id}.main`)}</h3>
           <div className="search-box">
             <input
               type="text"
@@ -110,20 +112,19 @@ const Weather = () => {
             </div>
           </div>
           <ul>
-            {typeof weather?.main !== "undefined" ? (
               <div>
                 {" "}
                 <li className="cityHead">
                   <p>
-                    {weather?.name},{weather?.sys.country}
+                    {weather?.name},{weather?.sys?.country}
                   </p>
                   <img
                     alt="Weather icon"
                     className="temp"
-                    src={`https://openweathermap.org/img/wn/${weather?.weather[0].icon}.png`}
+                    src={`https://openweathermap.org/img/wn/${weather?.weather?.[0].icon}.png`}
                   />
                 </li>
-                <li>
+                <li data-testid="temperature-info">
                   {i18next.t("temperature")}{" "}
                   <span className="temp">
                     {Math.round(weather?.main?.temp)}°c
@@ -132,25 +133,23 @@ const Weather = () => {
                 <li>
                   {i18next.t("humidity")}
                   <span className="temp">
-                    {Math.round(weather?.main.humidity)}%
+                    {Math.round(weather?.main?.humidity)}%
                   </span>
                 </li>
                 <li>
                   {i18next.t("visibility")}
                   <span className="temp">
-                    {Math.round(weather?.visibility)} mi
+                    {Math.round(weather?.visibility)} m
                   </span>
                 </li>
                 <li>
                   {i18next.t("windspeed")}
                   <span className="temp">
-                    {Math.round(weather?.wind.speed)} Km/h
+                    {Math.round(weather?.wind?.speed)} km/h
                   </span>
                 </li>
               </div>
-            ) : (
-              <li>{error?.message}</li>
-            )}
+              {error?.message ? (<li>{error?.message}</li>) : (null)}
           </ul>
         </article>
       </section>

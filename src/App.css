@@ -219,7 +219,6 @@ img {
 /*-- Index-Page-Styling --*/
 
 body {
-  /* background: url("./images/background.jpg"); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -229,7 +228,7 @@ body {
   -o-background-size: cover;
   font-family: "Open Sans", sans-serif;
   text-align: center;
-  background-color: ;
+  background-color: rgb(188, 228, 252);
 }
 
 body a {
@@ -261,7 +260,6 @@ h1 {
   width: 60%;
   height: 100%;
   float: left;
-  /* background: url("./images/city.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
@@ -346,7 +344,7 @@ div#txt {
 
 .today-weather h3 {
   text-transform: capitalize;
-  font-size: 50px;
+  font-size: 25px;
   color: #fff;
   width: 80%;
   margin: 0 auto 10px;
@@ -753,7 +751,8 @@ div#txt {
 }
 
 .footer-info span {
-  color: #000;
+  color: #141414;
+  font-size: 18px;
   font-weight: bold;
 }
 

@@ -1,4 +1,6 @@
 import React from "react";
+import { withTranslation } from "react-i18next";
+import i18next from "i18next";
 import Weather from "./Weather";
 import "./App.css";
 
@@ -10,11 +12,12 @@ function App() {
       </main>
       <footer className="footer-info">
         <span>
-          Better than Busu | Developed by: Liviu Padurariu and Mariana Georges
+          {`${i18next.t("motto")}`} | {`${i18next.t("developedBy")} `}
+          Liviu Padurariu and Mariana Georges
         </span>
       </footer>
     </React.Fragment>
   );
 }
 
-export default App;
+export default withTranslation()(App);
