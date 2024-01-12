@@ -1,0 +1,35 @@
+{
+  "coord": { "lon": 23.6, "lat": 46.7667 },
+  "weather": [
+    {
+      "id": 802,
+      "main": "Clouds",
+      "description": "scattered clouds",
+      "icon": "03n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": -2.29,
+    "feels_like": -2.29,
+    "temp_min": -2.51,
+    "temp_max": -2.29,
+    "pressure": 1019,
+    "humidity": 69
+  },
+  "visibility": 10000,
+  "wind": { "speed": 1.03, "deg": 0 },
+  "clouds": { "all": 40 },
+  "dt": 1704992314,
+  "sys": {
+    "type": 1,
+    "id": 6913,
+    "country": "RO",
+    "sunrise": 1704953311,
+    "sunset": 1704985050
+  },
+  "timezone": 7200,
+  "id": 681290,
+  "name": "Cluj-Napoca",
+  "cod": 200
+}

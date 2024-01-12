@@ -1,12 +1,12 @@
 import React from "react";
-import CurrentLocation from "./currentLocation";
+import Weather from "./Weather";
 import "./App.css";
 
 function App() {
   return (
     <React.Fragment>
       <main className="container" role="main">
-        <CurrentLocation />
+        <Weather />
       </main>
       <footer className="footer-info">
         <span>
