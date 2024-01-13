@@ -1,10 +1,13 @@
 # Getting Started with React Weather App
 
-## [Documentație](./Docs/Documentatie.md) 
+## [Documentație](./Docs/Documentatie.md)
+
+![Screenshot](./Docs/img/Screenshot.png)
 
 ## Requirements:
 
 #### `node -v v18.18.0`
+
 #### `npm -v 10.2.0`
 
 ## Installation:
