@@ -33,7 +33,9 @@ Proiectul demonstrează o colaborare eficientă, deoarece implică doi colaborat
 
 ## Planificare Gantt: ##
 
-![DiagramaGantt](./img/ProiectTestare.png)
+![GanttGraph](./img/GanttGraph.png)
+
+![GanttResources](./img/GanttResources.png)
 
 ## Produse auxiliare: ##
 
